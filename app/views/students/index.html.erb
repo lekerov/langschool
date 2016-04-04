@@ -1,0 +1,9 @@
+<% @student.each do |student| %>
+    <li>
+        <%= link_to student.name, student %>
+        <%= student.email %> |
+        <%= student.course.course %>
+ 
+      
+    </li>
+<% end %>

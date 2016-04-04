@@ -1,0 +1,22 @@
+<% provide(:title, "Вход в личный кабинет ученика") %>
+<h2>Вход в личный кабинет ученика</h2>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      
+      <%= form_for(:student_session, url: student_login_path) do |f| %>
+      
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form_control' %>
+      
+      <%= f.submit "Войти", class: 'btn btn-primary' %>
+      
+      <% end %>
+      
+      <p>Хотите зарегистрироваться? <%= link_to "Регистрация ученика", register_student_path %> </p>
+      </div>
+      </div>
+      

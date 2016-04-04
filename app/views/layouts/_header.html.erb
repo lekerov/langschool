@@ -1,0 +1,30 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Qazaq Mekteb", root_path, id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Домашняя страница",   root_path %></li>
+            <li><%= link_to "Контакты", contacts_path %></li>
+            <li><%= link_to "Помощь",   help_path %></li>
+            <li><%= link_to "О нас", about_path %></li>
+            
+            <% if s_logged_in? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toogle" data-toogle="dropdown"> Учетная Запись <%=  current_student.name %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Настройки", '#' %></li>
+                <li><%= link_to "Выход", student_logout_path, method: :delete  %></li>
+              </ul>
+            <% else %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toogle" data-toogle="dropdown"> Ученикам <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Вход в личный кабинет", student_login_path %></li>
+                <li><%= link_to "Регистрация ученика", register_student_path %></li>    
+              </ul>
+            <% end %>
+
+            
+        </nav>
+      </div>
+    </header>

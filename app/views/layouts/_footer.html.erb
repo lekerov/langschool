@@ -1,0 +1,18 @@
+<% if t_logged_in? %>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toogle" data-toogle="dropdown"> Учетная Запись <%=  current_teacher.name %> <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><%= link_to "Настройки", '#' %></li>
+                            <li><%= link_to "Выход", teacher_logout_path, method: :delete  %></li>
+                          </ul>
+                        
+                        <% else %>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toogle" data-toogle="dropdown"> Учителям <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><%= link_to "Вход в личный кабинет", teacher_login_path %></li>
+                            <li><%= link_to "Регистрация учителя", register_teacher_path %></li>    
+                          </ul>
+                        <% end %>
+            
+            </ul>
